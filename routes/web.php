@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $links = \App\Models\Link::all();
+ 
+    return view('welcome', ['links' => $links]);
 });
 
 Auth::routes();
